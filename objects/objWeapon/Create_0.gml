@@ -1,0 +1,1 @@
+attackSpeed = 0;
