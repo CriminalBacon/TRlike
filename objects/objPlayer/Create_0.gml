@@ -9,6 +9,9 @@ dashBaseResetTime = room_speed * 5;
 dashTimer = dashBaseResetTime
 state = PLAYERSTATE.FREE;
 
+//initialize player
+
+
 
 //create inventory
 instance_create_layer(x - 32, y + 32, "Player", objInventory);

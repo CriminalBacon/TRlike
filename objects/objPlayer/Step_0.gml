@@ -7,12 +7,24 @@ var _keyDown = keyboard_check(ord("S"));
 var _keyDash = keyboard_check_pressed(vk_space);
 var _keyInventory = keyboard_check_pressed(ord("F"));
 var _keyBomb = keyboard_check_pressed(ord("Q"));
+var _keyAction = keyboard_check_pressed(ord("E"));
 // ********************
 
 
 hsp = (_keyRight - _keyLeft) * spWalk;
 vsp = (_keyDown - _keyUp) * spWalk;
 
+// item pickup
+// ********************
+if (_keyAction) && (place_meeting(x, y, parItem))
+{
+	InventoryAdd(objInventory, parItem);
+	
+
+}
+
+
+// ********************
 
 // implement dash
 // ********************
@@ -62,7 +74,7 @@ if (_keyInventory)
 // ******************** 
 if (_keyBomb)
 {
-	instance_create_layer(x, y, "Player", objBomb);
+	instance_create_layer(x, y, "Item", objBomb);
 
 }
 //
